@@ -1,20 +1,29 @@
 #include "main.h"
-
 /**
- * mul - multiply two numbers
- * Description: multiply two numbers
- * @num1: interger value
- * @num2: interger value
- *
- * Return: result
- * Example:
- *      mul(4 * 5) ---> 20
+ * mul - multiply 2 int
+ * @a: first int
+ * @b: second int
+ * Return: addition of the multiplicattion
  */
 
-int mul(int num1, int num2)
+int mul(int a, int b)
 {
-	int result = 0;
+	return (a * b);
+}
 
-	result = num1 * num2;
-	return (result);
+
+2-main.c
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    printf("%d\n", mul(98, 1024));
+    printf("%d\n", mul(-402, 4096));
+    return (0);
 }
