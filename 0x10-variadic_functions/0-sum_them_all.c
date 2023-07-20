@@ -3,24 +3,23 @@
 #include <stdarg.h>
 
 /**
- * sum_them_all - check the code for Holberton School students.
- * @n: number of arguments
- * Return: Always 0.
+ * sum_them_all - sums variable arguments
+ * @n: the number of arguments
+ * @...: the integers to sum
+ *
+ * Return: the integer sum
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list valist;
-	int sum = 0;
-	unsigned int i;
+	int s = 0, i = n;
+	va_list ap;
 
-	va_start(valist, n);
+	if (!n)
+		return (0);
 
-	for (i = 0; i < n; i++)
-	{
-		sum += va_arg(valist, int);
-	}
-
-	va_end(valist);
-
-	return (sum);
+	va_start(ap, n);
+	while (i--)
+		s += va_arg(ap, int);
+	va_end(ap);
+	return (s);
 }
